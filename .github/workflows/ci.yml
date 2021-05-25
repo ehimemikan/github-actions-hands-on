@@ -13,10 +13,10 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm test
-    build:
-      name: Docker Build
-      needs: [lint_and_test]
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - run: docker build .
+  build:
+    name: Docker Build
+    needs: [lint_and_test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker build .
